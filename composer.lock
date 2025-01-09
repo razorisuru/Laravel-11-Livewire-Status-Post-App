@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4bee24c327bc4ffe0f467d93f2864be0",
+    "content-hash": "5aa1678a7a3d4b990b72b269924fd7ce",
     "packages": [
         {
             "name": "brick/math",
@@ -3445,6 +3445,55 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "razorisuru/shopping-cart",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/razorisuru/shopping-cart.git",
+                "reference": "eb5855169f976422ee74ea4122b62f516df25560"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/razorisuru/shopping-cart/zipball/eb5855169f976422ee74ea4122b62f516df25560",
+                "reference": "eb5855169f976422ee74ea4122b62f516df25560",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^11.0",
+                "php": "^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Cart": "razorisuru\\ShoppingCart\\CartFacade"
+                    },
+                    "providers": [
+                        "razorisuru\\ShoppingCart\\ShoppingCartServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "razorisuru\\ShoppingCart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Isuru Bandara",
+                    "email": "isurubandara318@gmail.com"
+                }
+            ],
+            "description": "The ShoppingCart package provides a simple and flexible solution for managing a shopping cart in Laravel applications. It uses sessions to store cart items, allowing you to easily add, update, remove, and clear items. With support for custom attributes, price calculations, and total cost computation, this package is ideal for building e-commerce and order management systems.",
+            "support": {
+                "issues": "https://github.com/razorisuru/shopping-cart/issues",
+                "source": "https://github.com/razorisuru/shopping-cart/tree/main"
+            },
+            "time": "2025-01-09T17:03:05+00:00"
         },
         {
             "name": "symfony/clock",
@@ -8285,7 +8334,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "razorisuru/shopping-cart": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
