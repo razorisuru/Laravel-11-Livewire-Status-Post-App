@@ -23,8 +23,7 @@ class ProductController extends Controller
 
 
 
-        return response()->json(['cart' => $this->cart->getAll(1),]);
-        // dd($cart->getAll(1), $total);
+
     }
 
     /**
