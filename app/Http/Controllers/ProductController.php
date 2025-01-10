@@ -14,12 +14,13 @@ class ProductController extends Controller
     public function index()
     {
         $cart = app(Cart::class);
-        $cart->add(1, 2, 100, ['color' => 'red']);
-        $cart->add(2, 2, 100, ['color' => 'green']);
-        $cart->update(2, 4);
+        $cart->add(1, 2, 100, 210, ['color' => 'red']);
+        $cart->add(1, 5, 100, 200,['color' => 'green']);
+        // $cart->update(2, 4);
         // $cart->remove(1);
-        $total = $cart->total();
-        return response()->json(['cart' => $cart->getAll(), 'total' => $total]);
+        $total = $cart->total(1);
+        return response()->json(['cart' => $cart->getAll(1), 'total' => $total]);
+        // dd($cart->getAll(1), $total);
     }
 
     /**

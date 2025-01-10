@@ -3452,12 +3452,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/razorisuru/shopping-cart.git",
-                "reference": "eb5855169f976422ee74ea4122b62f516df25560"
+                "reference": "411bc46d31dfa09020225d2d10a6955c71522d0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/razorisuru/shopping-cart/zipball/eb5855169f976422ee74ea4122b62f516df25560",
-                "reference": "eb5855169f976422ee74ea4122b62f516df25560",
+                "url": "https://api.github.com/repos/razorisuru/shopping-cart/zipball/411bc46d31dfa09020225d2d10a6955c71522d0c",
+                "reference": "411bc46d31dfa09020225d2d10a6955c71522d0c",
                 "shasum": ""
             },
             "require": {
@@ -3493,7 +3493,7 @@
                 "issues": "https://github.com/razorisuru/shopping-cart/issues",
                 "source": "https://github.com/razorisuru/shopping-cart/tree/main"
             },
-            "time": "2025-01-09T17:03:05+00:00"
+            "time": "2025-01-10T04:30:55+00:00"
         },
         {
             "name": "symfony/clock",
