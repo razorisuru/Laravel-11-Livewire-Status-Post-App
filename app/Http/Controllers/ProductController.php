@@ -8,18 +8,22 @@ use razorisuru\ShoppingCart\Cart;
 
 class ProductController extends Controller
 {
+    protected $cart;
+
+    public function __construct()
+    {
+        $this->cart = new Cart(); // Initialize an instance of the Cart class
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $cart = app(Cart::class);
-        $cart->add(1, 2, 100, 210, ['color' => 'red']);
-        $cart->add(1, 5, 100, 200,['color' => 'green']);
-        // $cart->update(2, 4);
-        // $cart->remove(1);
-        $total = $cart->total(1);
-        return response()->json(['cart' => $cart->getAll(1), 'total' => $total]);
+
+
+
+        return response()->json(['cart' => $this->cart->getAll(1),]);
         // dd($cart->getAll(1), $total);
     }
 
@@ -28,7 +32,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $this->cart->add(1, 1, 2, 210, ['color' => 'red']);
+        // $this->cart->add(1, 1, 3, 200,['color' => 'green']);
+
+        return response()->json(['cart' => $this->cart->getAll(1)]);
+        // dd(session()->all());
     }
 
     /**
@@ -66,8 +74,10 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(Product $product, $id)
     {
-        //
+
+        $this->cart->clear($id);
+        return response()->json(['cart' => "deleted"]);
     }
 }

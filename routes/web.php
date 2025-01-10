@@ -10,9 +10,14 @@ Route::get('chirps', [ChirpController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('chirps');
 
-    Route::get('products', [ProductController::class, 'index'])
-    ->middleware(['auth', 'verified'])
+Route::get('products', [ProductController::class, 'index'])
     ->name('products');
+
+Route::get('products/{id}', [ProductController::class, 'destroy'])
+    ->name('products.destroy');
+
+Route::get('product/create', [ProductController::class, 'create'])
+    ->name('products.create');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -22,4 +27,4 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
