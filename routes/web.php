@@ -11,6 +11,7 @@ Route::get('chirps', [ChirpController::class, 'index'])
     ->name('chirps');
 
 Route::get('products', [ProductController::class, 'index'])
+    ->middleware(['auth', 'verified'])
     ->name('products');
 
 Route::get('products/{id}', [ProductController::class, 'destroy'])

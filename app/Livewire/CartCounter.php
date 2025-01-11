@@ -41,6 +41,12 @@ class CartCounter extends Component
         $this->dispatch('cartUpdated');
     }
 
+    public function clearCart()
+    {
+        $this->cart->clear(Auth::user()->id);
+        $this->dispatch('cartUpdated');
+    }
+
     public function checkout()
     {
         $this->loading = true;
