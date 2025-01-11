@@ -40,7 +40,7 @@ class ProductsTable extends Component
     {
         $product = Product::findOrFail($product_id);
         // dd($this->quantity[$product_id]);
-        $this->cart->add(Auth::user()->id, $product_id, $this->quantity[$product_id], $product->price, ['name' => $product->name]);
+        $this->cart->add(Auth::user()->id, $product_id, $this->quantity[$product_id], $product->price, ['name' => $product->name, 'image' => $product->image]);
         $this->dispatch('cartUpdated');
 
     }

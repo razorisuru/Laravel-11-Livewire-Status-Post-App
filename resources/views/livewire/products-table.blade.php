@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 bg-gray-100">
     @foreach ($products as $product)
         <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg">
-            <img src="{{ $product->image }}" alt="{{ $product->name }}" class="w-full h-48 object-cover">
+            <img src="{{ asset('storage/product-images/'. $product->image) }}" alt="{{ $product->name }}" class="w-full h-48 object-cover">
             <div class="p-4">
                 <h3 class="text-lg font-semibold text-gray-800">{{ $product->name }}</h3>
                 <p class="text-sm text-gray-600 mt-1 truncate">{{ $product->description }}</p>
