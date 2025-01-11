@@ -10,7 +10,7 @@
         <div class="flex items-center justify-between px-4 py-3 bg-gray-800 text-white">
             <h2 class="text-lg font-semibold">Your Cart ({{ $cartCount }})</h2>
             <button onclick="toggleCart()" class="text-white hover:text-gray-400">
-               X
+                <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
 
