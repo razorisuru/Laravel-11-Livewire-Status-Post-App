@@ -38,6 +38,49 @@ class ProductController extends Controller
         // $this->cart->clear(Auth::user()->id);
         return response()->json(['cart' => $this->cart->getAll(Auth::user()->id)]);
         // dd(session()->all());
+
+        // $test = [
+        //     "cart" => [
+        //         "10" => [
+        //             "user_id" => 1,
+        //             "item_id" => 10,
+        //             "quantity" => 5,
+        //             "price" => "299.95",
+        //             "attributes" => [
+        //                 "name" => "Monitor",
+        //             ],
+        //         ],
+        //         "9" => [
+        //             "user_id" => 1,
+        //             "item_id" => 9,
+        //             "quantity" => 1,
+        //             "price" => "39.99",
+        //             "attributes" => [
+        //                 "name" => "Mouse",
+        //             ],
+        //         ],
+        //         "5" => [
+        //             "user_id" => 1,
+        //             "item_id" => 9,
+        //             "quantity" => 1,
+        //             "price" => "39.99",
+        //             "attributes" => [
+        //                 "name" => "Mouse",
+        //             ],
+        //         ],
+        //         "8" => [
+        //             "user_id" => 1,
+        //             "item_id" => 8,
+        //             "quantity" => 1,
+        //             "price" => "79.99",
+        //             "attributes" => [
+        //                 "name" => "Keyboard",
+        //             ],
+        //         ],
+        //     ],
+        // ];
+
+        // return response()->json(count($test['cart']));
     }
 
     /**
@@ -45,7 +88,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->cart->add(Auth::user()->id, 1, 2, 210, ['color' => 'red']);
+        return response()->json(['cart' => $this->cart->getAll(Auth::user()->id)]);
     }
 
     /**
@@ -53,7 +97,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return response()->json(['cart' => $this->cart->getAll(Auth::user()->id)]);
     }
 
     /**
@@ -69,7 +113,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $this->cart->update(1, 5, 4);
     }
 
     /**

@@ -32,8 +32,8 @@ class ProductsTable extends Component
 
     public function render()
     {
-        $cart = $this->cart->getAll(Auth::user()->id);
-        return view('livewire.products-table', compact('cart'));
+        // $cart = $this->cart->getAll(Auth::user()->id);
+        return view('livewire.products-table');
     }
 
     public function addToCart($product_id)
